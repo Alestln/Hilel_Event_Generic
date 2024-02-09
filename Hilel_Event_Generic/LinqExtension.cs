@@ -1,6 +1,4 @@
-﻿using Hilel_Event_Generic.Entities;
-
-namespace Hilel_Event_Generic;
+﻿namespace Hilel_Event_Generic;
 
 public static class LinqExtension
 {

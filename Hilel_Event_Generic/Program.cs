@@ -18,7 +18,7 @@ class Program
             Console.WriteLine(e.Message);
         }
         
-        // map customers from json to my ultra collection
+        // Добавление покупателей к ультра коллекции
         UltraCollection<Customer> collection = new UltraCollection<Customer>();
 
         collection.OnExpandedEvent += OnResizeEvent.OnResizeEventHandler;
@@ -30,7 +30,7 @@ class Program
 
         collection.OnExpandedEvent -= OnResizeEvent.OnResizeEventHandler;
         
-        // Filter and sort collection
+        // Фильтрация и сортировка коллекции
         collection = collection
             .Where(c => c.FirstName.StartsWith("L", StringComparison.OrdinalIgnoreCase))
             .OrderBy(c => c.LastName).ToUltraCollection();
@@ -44,6 +44,7 @@ class Program
         // Далее тот код, про который я задавал вопросы на счет срока хранения объекта
         
         // Другой разработчик создал какой-то свой класс и использует в нем ультра коллекцию с ивентом, который он не убрал
+        // При выполнении клиентского кода в консоль выводится два сообщения
         Client client = new Client();
         client.ClientCode();
         
